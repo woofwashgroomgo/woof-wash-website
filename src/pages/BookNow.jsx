@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { PHONE_DISPLAY, PHONE_TEL } from '../constants.js'
 
 const inputClasses =
@@ -8,6 +9,14 @@ function encode(data) {
   return Object.entries(data)
     .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
     .join('&')
+}
+
+function SectionHeading({ children }) {
+  return (
+    <h3 className="border-b-2 border-brand-blue pb-1 text-xl font-bold text-brand sm:col-span-2">
+      {children}
+    </h3>
+  )
 }
 
 export default function BookNow() {
@@ -62,10 +71,10 @@ export default function BookNow() {
       </div>
 
       <div className="mt-12">
-        <h2 className="text-2xl font-bold text-brand">New Client?</h2>
+        <h2 className="text-2xl font-bold text-brand">New Client Information Form</h2>
         <p className="mt-2 text-gray-700">
           If you are a new client, please fill out the New Client Information Form
-          below and Karen will get back to you.
+          below.
         </p>
 
         {status === 'success' ? (
@@ -94,51 +103,83 @@ export default function BookNow() {
               </label>
             </p>
 
-            <label className="block">
-              <span className="mb-1 block font-semibold text-gray-700">Your Name *</span>
-              <input type="text" name="owner-name" required className={inputClasses} />
+            <SectionHeading>Owner&rsquo;s Information</SectionHeading>
+            <label className="block sm:col-span-2">
+              <span className="mb-1 block font-semibold text-gray-700">Name</span>
+              <input type="text" name="owner-name" placeholder="Name" className={inputClasses} />
             </label>
             <label className="block">
-              <span className="mb-1 block font-semibold text-gray-700">Phone *</span>
-              <input type="tel" name="phone" required className={inputClasses} />
+              <span className="mb-1 block font-semibold text-gray-700">Email Address</span>
+              <input type="email" name="email" placeholder="Email Address" className={inputClasses} />
+            </label>
+            <label className="block">
+              <span className="mb-1 block font-semibold text-gray-700">Phone Number</span>
+              <input type="tel" name="phone" placeholder="Phone Number" className={inputClasses} />
+            </label>
+
+            <SectionHeading>Name of Person Who Referred You</SectionHeading>
+            <label className="block sm:col-span-2">
+              <span className="mb-1 block font-semibold text-gray-700">Name</span>
+              <input type="text" name="referrer-name" placeholder="Name" className={inputClasses} />
+            </label>
+
+            <SectionHeading>Client&rsquo;s Information (your dog)</SectionHeading>
+            <label className="block sm:col-span-2">
+              <span className="mb-1 block font-semibold text-gray-700">Name</span>
+              <input type="text" name="dog-name" placeholder="Name" className={inputClasses} />
             </label>
             <label className="block sm:col-span-2">
-              <span className="mb-1 block font-semibold text-gray-700">Email</span>
-              <input type="email" name="email" className={inputClasses} />
-            </label>
-            <label className="block">
-              <span className="mb-1 block font-semibold text-gray-700">Dog&rsquo;s Name *</span>
-              <input type="text" name="dog-name" required className={inputClasses} />
-            </label>
-            <label className="block">
               <span className="mb-1 block font-semibold text-gray-700">Breed</span>
-              <input type="text" name="breed" className={inputClasses} />
+              <input type="text" name="breed" placeholder="Breed" className={inputClasses} />
             </label>
             <label className="block">
-              <span className="mb-1 block font-semibold text-gray-700">Size</span>
-              <select name="size" className={inputClasses} defaultValue="">
-                <option value="" disabled>Select a size&hellip;</option>
-                <option>Small (under 20 lbs)</option>
-                <option>Medium (20&ndash;50 lbs)</option>
-                <option>Large (50&ndash;90 lbs)</option>
-                <option>Extra Large (over 90 lbs)</option>
-              </select>
+              <span className="mb-1 block font-semibold text-gray-700">Age</span>
+              <input type="number" name="age" step="any" min="0" placeholder="Age" className={inputClasses} />
             </label>
             <label className="block">
-              <span className="mb-1 block font-semibold text-gray-700">Service Wanted</span>
-              <select name="service" className={inputClasses} defaultValue="">
-                <option value="" disabled>Select a service&hellip;</option>
-                <option>Just a Bath</option>
-                <option>Grooming</option>
-                <option>Not sure yet</option>
-              </select>
+              <span className="mb-1 block font-semibold text-gray-700">Weight</span>
+              <input type="number" name="weight" step="any" min="0" placeholder="Weight" className={inputClasses} />
             </label>
             <label className="block sm:col-span-2">
               <span className="mb-1 block font-semibold text-gray-700">
-                Anything Karen should know? (temperament, coat condition, etc.)
+                Concerns (allergies, behavioral issues, temperament, etc.)
               </span>
-              <textarea name="notes" rows="4" className={inputClasses} />
+              <textarea
+                name="concerns"
+                rows="6"
+                placeholder="Concerns (allergies, behavioral issues, temperament, etc.)"
+                className={inputClasses}
+              />
             </label>
+
+            <SectionHeading>Our Client Agreement</SectionHeading>
+            <p className="text-gray-700 sm:col-span-2">
+              By checking the checkbox below, you agree that you have read and accept
+              our new client agreement. To review our client agreement:{' '}
+              <Link
+                to="/client-agreement"
+                className="font-semibold text-brand underline decoration-brand-blue underline-offset-4 hover:text-brand-dark"
+              >
+                click here
+              </Link>
+              .
+            </p>
+            <div className="sm:col-span-2">
+              <p className="font-semibold text-gray-700">
+                Please acknowledge you have read and accept the client agreement
+                <span className="text-red-600">*</span>
+              </p>
+              <label className="mt-2 flex items-center gap-3">
+                <input
+                  type="checkbox"
+                  name="agreement"
+                  value="Yes, I accept the agreement"
+                  required
+                  className="h-5 w-5 accent-brand"
+                />
+                <span className="text-gray-700">Yes, I accept the agreement</span>
+              </label>
+            </div>
 
             <div className="sm:col-span-2">
               <button
@@ -146,7 +187,7 @@ export default function BookNow() {
                 disabled={status === 'submitting'}
                 className="rounded-full bg-brand px-8 py-3 text-sm font-bold uppercase tracking-widest text-white shadow-md transition hover:bg-brand-dark disabled:opacity-60"
               >
-                {status === 'submitting' ? 'Sending…' : 'Send to Karen'}
+                {status === 'submitting' ? 'Sending…' : 'Submit My Form'}
               </button>
               {status === 'error' && (
                 <p className="mt-3 text-red-600">

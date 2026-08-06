@@ -8,6 +8,7 @@ import Services from './pages/Services.jsx'
 import Testimonials from './pages/Testimonials.jsx'
 import Gallery from './pages/Gallery.jsx'
 import BookNow from './pages/BookNow.jsx'
+import ClientAgreement from './pages/ClientAgreement.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/book-now" element={<BookNow />} />
+          <Route path="/client-agreement" element={<ClientAgreement />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
