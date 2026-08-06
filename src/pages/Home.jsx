@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import BookNowButton from '../components/BookNowButton.jsx'
 import { services, pricingNote } from '../data/services.js'
-import karenAndDog from '../assets/karen-and-dog.jpg'
-import ruby from '../assets/gallery-ruby.jpg'
+import karenHoldingDog from '../assets/Karen_holding_dog.png'
 
 export default function Home() {
   return (
@@ -28,9 +27,9 @@ export default function Home() {
             <BookNowButton className="mt-8" />
           </div>
           <img
-            src={ruby}
-            alt="Ruby, a freshly groomed apricot poodle"
-            className="mx-auto aspect-square w-64 rounded-full border-8 border-white object-cover object-top shadow-2xl md:w-80"
+            src={karenHoldingDog}
+            alt="Karen, the groomer, holding a happy freshly groomed dog"
+            className="mx-auto w-full max-w-sm drop-shadow-2xl"
           />
         </div>
       </section>
@@ -62,36 +61,29 @@ export default function Home() {
       </section>
 
       <section className="bg-brand-blue-light" aria-label="Meet the Groomer">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
-          <img
-            src={karenAndDog}
-            alt="Karen holding a freshly groomed dog"
-            className="mx-auto w-full max-w-md rounded-xl shadow-lg"
-          />
-          <div>
-            <h2 className="text-3xl font-extrabold text-brand">Meet the Groomer</h2>
-            <p className="mt-4 text-gray-700">
-              I&rsquo;m Karen. A few years ago, I left the medical field and trained to
-              become a professional dog groomer. I began working in salons, but
-              didn&rsquo;t like the atmosphere &amp; assembly line mentality &mdash; get
-              them in, get them out!
-            </p>
-            <p className="mt-4 text-gray-700">
-              Instead, I provide professional, one-on-one grooming with special
-              attention to detail in a peaceful, crate-free, stress-free environment.
-              The result is a calmer, clean, good-looking dog!
-            </p>
-            <p className="mt-4 text-gray-700">
-              I strive to make sure that every dog and his or her owner feel happy,
-              comfortable and want to come back again and again.
-            </p>
-            <Link
-              to="/meet-the-groomer"
-              className="mt-5 inline-block font-semibold text-brand underline decoration-brand-blue decoration-2 underline-offset-4 hover:text-brand-dark"
-            >
-              More about Karen &rarr;
-            </Link>
-          </div>
+        <div className="mx-auto max-w-3xl px-4 py-14 text-center">
+          <h2 className="text-3xl font-extrabold text-brand">Meet the Groomer</h2>
+          <p className="mt-4 text-gray-700">
+            I&rsquo;m Karen. A few years ago, I left the medical field and trained to
+            become a professional dog groomer. I began working in salons, but
+            didn&rsquo;t like the atmosphere &amp; assembly line mentality &mdash; get
+            them in, get them out!
+          </p>
+          <p className="mt-4 text-gray-700">
+            Instead, I provide professional, one-on-one grooming with special
+            attention to detail in a peaceful, crate-free, stress-free environment.
+            The result is a calmer, clean, good-looking dog!
+          </p>
+          <p className="mt-4 text-gray-700">
+            I strive to make sure that every dog and his or her owner feel happy,
+            comfortable and want to come back again and again.
+          </p>
+          <Link
+            to="/meet-the-groomer"
+            className="mt-5 inline-block font-semibold text-brand underline decoration-brand-blue decoration-2 underline-offset-4 hover:text-brand-dark"
+          >
+            More about Karen &rarr;
+          </Link>
         </div>
       </section>
     </>
