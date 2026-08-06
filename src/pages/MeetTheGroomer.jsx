@@ -1,5 +1,5 @@
 import BookNowButton from '../components/BookNowButton.jsx'
-import karenAndDog from '../assets/karen-and-dog.jpg'
+import karenHoldingDog from '../assets/Karen_holding_dog.png'
 import signature from '../assets/capture-1.png'
 
 export default function MeetTheGroomer() {
@@ -9,9 +9,9 @@ export default function MeetTheGroomer() {
 
       <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
         <img
-          src={karenAndDog}
+          src={karenHoldingDog}
           alt="Karen holding a freshly groomed dog"
-          className="mx-auto w-full max-w-md rounded-xl shadow-lg md:sticky md:top-24"
+          className="mx-auto w-full max-w-md drop-shadow-xl md:sticky md:top-24"
         />
         <div className="space-y-5 text-lg leading-relaxed text-gray-700">
           <p>

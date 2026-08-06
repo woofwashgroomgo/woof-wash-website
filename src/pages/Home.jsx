@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import BookNowButton from '../components/BookNowButton.jsx'
 import { services, pricingNote } from '../data/services.js'
 import hero from '../assets/hero.png'
-import karenAndDog from '../assets/karen-and-dog.jpg'
+import karenHoldingDog from '../assets/Karen_holding_dog.png'
 
 export default function Home() {
   return (
@@ -52,9 +52,9 @@ export default function Home() {
       <section className="bg-brand-blue-light" aria-label="Meet the Groomer">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
           <img
-            src={karenAndDog}
+            src={karenHoldingDog}
             alt="Karen holding a freshly groomed dog"
-            className="mx-auto w-full max-w-md rounded-xl shadow-lg"
+            className="mx-auto w-full max-w-md drop-shadow-xl"
           />
           <div>
             <h2 className="text-3xl font-extrabold text-brand">Meet the Groomer</h2>
