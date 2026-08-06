@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import BookNowButton from '../components/BookNowButton.jsx'
+import TestimonialCarousel from '../components/TestimonialCarousel.jsx'
 import { services, pricingNote } from '../data/services.js'
+import { homePreview } from '../data/gallery.js'
+import { PHONE_DISPLAY, PHONE_TEL } from '../constants.js'
 import karenHoldingDog from '../assets/Karen_holding_dog.png'
 
 export default function Home() {
@@ -83,6 +86,74 @@ export default function Home() {
             className="mt-5 inline-block font-semibold text-brand underline decoration-brand-blue decoration-2 underline-offset-4 hover:text-brand-dark"
           >
             More about Karen &rarr;
+          </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 py-14 text-center" aria-label="Testimonials">
+        <h2 className="text-3xl font-extrabold text-brand">Testimonials</h2>
+        <div className="mt-8">
+          <TestimonialCarousel />
+        </div>
+        <Link
+          to="/testimonials"
+          className="mt-6 inline-block font-semibold text-brand underline decoration-brand-blue decoration-2 underline-offset-4 hover:text-brand-dark"
+        >
+          Read all testimonials &rarr;
+        </Link>
+      </section>
+
+      <section className="bg-brand-blue-light/40" aria-label="Gallery">
+        <div className="mx-auto max-w-6xl px-4 py-14 text-center">
+          <h2 className="text-3xl font-extrabold text-brand">Gallery</h2>
+          <p className="mt-2 text-gray-700">
+            A few satisfied clients (and their owners are happy too!)
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {homePreview.map((photo) => (
+              <Link key={photo.name} to="/gallery" className="group">
+                <figure className="overflow-hidden rounded-xl shadow-md transition group-hover:shadow-lg">
+                  <div className="flex h-72 items-end justify-center bg-gradient-to-b from-brand-blue to-[#7fd4f5] px-5 pt-5">
+                    <img
+                      src={photo.src}
+                      alt={`${photo.name} after grooming`}
+                      loading="lazy"
+                      className="max-h-full w-auto drop-shadow-[0_10px_14px_rgba(20,30,60,0.35)]"
+                    />
+                  </div>
+                  <figcaption className="bg-brand px-4 py-2 font-semibold text-white">
+                    {photo.name}
+                  </figcaption>
+                </figure>
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/gallery"
+            className="mt-8 inline-block font-semibold text-brand underline decoration-brand-blue decoration-2 underline-offset-4 hover:text-brand-dark"
+          >
+            See the full gallery &rarr;
+          </Link>
+        </div>
+      </section>
+
+      <section className="bg-brand" aria-label="Book an appointment">
+        <div className="mx-auto max-w-4xl px-4 py-14 text-center">
+          <h2 className="text-3xl font-extrabold text-white">
+            Is your dog looking scruffy and ready for a spa day?
+          </h2>
+          <p className="mt-3 text-lg text-purple-200">
+            Call or text Karen at{' '}
+            <a href={`tel:${PHONE_TEL}`} className="font-bold text-white underline decoration-brand-blue underline-offset-4">
+              {PHONE_DISPLAY}
+            </a>{' '}
+            to book your appointment.
+          </p>
+          <Link
+            to="/book-now"
+            className="mt-6 inline-block rounded-full bg-white px-8 py-3 text-sm font-bold uppercase tracking-widest text-brand shadow-md transition hover:bg-brand-blue-light"
+          >
+            Book Now
           </Link>
         </div>
       </section>
