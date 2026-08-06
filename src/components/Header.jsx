@@ -8,12 +8,18 @@ const navItems = [
   { to: '/services', label: 'Services' },
   { to: '/testimonials', label: 'Testimonials' },
   { to: '/gallery', label: 'Gallery' },
-  { to: '/book-now', label: 'Book Now' },
 ]
+
+function ctaClasses({ isActive }) {
+  return [
+    'inline-block whitespace-nowrap rounded-full bg-brand px-5 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-sm transition hover:bg-brand-dark',
+    isActive ? 'ring-2 ring-brand-blue ring-offset-2' : '',
+  ].join(' ')
+}
 
 function linkClasses({ isActive }) {
   return [
-    'block px-3 py-2 font-semibold tracking-wide transition-colors',
+    'block whitespace-nowrap px-3 py-2 font-semibold tracking-wide transition-colors',
     isActive
       ? 'text-brand underline decoration-brand-blue decoration-4 underline-offset-8'
       : 'text-gray-600 hover:text-brand',
@@ -28,7 +34,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img src={logo} alt="Woof Wash Groom & Go logo" className="h-14 w-auto" />
-          <span className="hidden text-sm font-medium text-gray-500 lg:block">
+          <span className="hidden text-sm font-medium text-gray-500 xl:block">
             Professional Dog Grooming Services in Long Beach, CA
           </span>
         </Link>
@@ -42,6 +48,11 @@ export default function Header() {
                 </NavLink>
               </li>
             ))}
+            <li className="ml-3">
+              <NavLink to="/book-now" end className={ctaClasses}>
+                Book Now
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
@@ -72,6 +83,16 @@ export default function Header() {
                 </NavLink>
               </li>
             ))}
+            <li className="px-3 py-3">
+              <NavLink
+                to="/book-now"
+                end
+                className={(state) => `${ctaClasses(state)} block text-center`}
+                onClick={() => setOpen(false)}
+              >
+                Book Now
+              </NavLink>
+            </li>
           </ul>
         </nav>
       )}
