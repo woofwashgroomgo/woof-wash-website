@@ -1,13 +1,13 @@
 import BookNowButton from '../components/BookNowButton.jsx'
-import brody from '../assets/gallery-brody.jpg'
-import prince from '../assets/gallery-prince.jpg'
-import jakeAndKoa from '../assets/gallery-jake-and-koa.jpg'
-import ellie from '../assets/gallery-ellie.jpg'
-import ruby from '../assets/gallery-ruby.jpg'
-import zeke from '../assets/gallery-zeke.jpg'
-import gracie from '../assets/gallery-gracie.jpg'
-import merlinAndPrince from '../assets/gallery-merlin-and-prince.jpg'
-import buddy from '../assets/gallery-buddy.jpg'
+import brody from '../assets/gallery-brody.png'
+import prince from '../assets/gallery-prince.png'
+import jakeAndKoa from '../assets/gallery-jake-and-koa.png'
+import ellie from '../assets/gallery-ellie.png'
+import ruby from '../assets/gallery-ruby.png'
+import zeke from '../assets/gallery-zeke.png'
+import gracie from '../assets/gallery-gracie.png'
+import merlinAndPrince from '../assets/gallery-merlin-and-prince.png'
+import buddy from '../assets/gallery-buddy.png'
 
 const photos = [
   { src: brody, name: 'Brody' },
@@ -35,12 +35,14 @@ export default function Gallery() {
             key={photo.name}
             className="mb-6 break-inside-avoid overflow-hidden rounded-xl shadow-md"
           >
-            <img
-              src={photo.src}
-              alt={`${photo.name} after grooming`}
-              loading="lazy"
-              className="w-full"
-            />
+            <div className="flex items-end justify-center bg-gradient-to-b from-brand-blue to-[#7fd4f5] px-5 pt-5">
+              <img
+                src={photo.src}
+                alt={`${photo.name} after grooming`}
+                loading="lazy"
+                className="w-full drop-shadow-[0_10px_14px_rgba(20,30,60,0.35)]"
+              />
+            </div>
             <figcaption className="bg-brand px-4 py-2 text-center font-semibold text-white">
               {photo.name}
             </figcaption>
