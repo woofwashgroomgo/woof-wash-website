@@ -50,13 +50,13 @@ export default function Home() {
       </section>
 
       <section className="bg-brand-blue-light" aria-label="Meet the Groomer">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-x-10 px-4 pt-14 md:grid-cols-2">
           <img
             src={karenHoldingDog}
             alt="Karen holding a freshly groomed dog"
-            className="mx-auto w-full max-w-md drop-shadow-xl"
+            className="order-last mx-auto mt-8 w-full max-w-md self-end drop-shadow-xl md:order-first md:mt-0"
           />
-          <div>
+          <div className="pb-14">
             <h2 className="text-3xl font-extrabold text-brand">Meet the Groomer</h2>
             <p className="mt-4 text-gray-700">
               I&rsquo;m Karen. A few years ago, I left the medical field and trained to
