@@ -1,25 +1,37 @@
 import { Link } from 'react-router-dom'
 import BookNowButton from '../components/BookNowButton.jsx'
 import { services, pricingNote } from '../data/services.js'
-import hero from '../assets/hero.png'
 import karenAndDog from '../assets/karen-and-dog.jpg'
+import ruby from '../assets/gallery-ruby.jpg'
 
 export default function Home() {
   return (
     <>
-      <section aria-label="Welcome">
-        <img
-          src={hero}
-          alt="Woof Wash Groom & Go — a scruffy dog wearing a purple shower cap"
-          className="w-full"
-        />
-        <div className="bg-brand-blue-light px-4 py-10 text-center">
-          <h1 className="text-3xl font-extrabold text-brand md:text-4xl">Welcome!</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-700">
-            Professional grooming in a stress-free environment for a calm, clean,
-            good-looking dog!
-          </p>
-          <BookNowButton className="mt-6" />
+      <section
+        aria-label="Welcome"
+        className="bg-gradient-to-br from-brand-blue to-sky-300"
+      >
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[3fr_2fr] md:py-20">
+          <div className="text-center md:text-left">
+            <h1 className="text-5xl font-extrabold uppercase leading-tight tracking-tight text-brand md:text-6xl">
+              Woof Wash
+              <br />
+              Groom &amp; Go
+            </h1>
+            <p className="mt-4 text-xl font-medium text-white drop-shadow-sm">
+              Professional Dog Grooming Services in Long Beach, CA
+            </p>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-brand-dark md:mx-0">
+              Professional grooming in a stress-free environment for a calm, clean,
+              good-looking dog!
+            </p>
+            <BookNowButton className="mt-8" />
+          </div>
+          <img
+            src={ruby}
+            alt="Ruby, a freshly groomed apricot poodle"
+            className="mx-auto aspect-square w-64 rounded-full border-8 border-white object-cover object-top shadow-2xl md:w-80"
+          />
         </div>
       </section>
 
