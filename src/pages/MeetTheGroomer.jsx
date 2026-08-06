@@ -8,11 +8,13 @@ export default function MeetTheGroomer() {
       <h1 className="text-center text-4xl font-extrabold text-brand">Meet the Groomer</h1>
 
       <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
-        <img
-          src={karenHoldingDog}
-          alt="Karen holding a freshly groomed dog"
-          className="mx-auto w-full max-w-md drop-shadow-xl md:sticky md:top-24"
-        />
+        <div className="self-start rounded-xl bg-brand-blue-light px-6 pt-6 md:sticky md:top-24">
+          <img
+            src={karenHoldingDog}
+            alt="Karen holding a freshly groomed dog"
+            className="mx-auto w-full max-w-md drop-shadow-xl"
+          />
+        </div>
         <div className="space-y-5 text-lg leading-relaxed text-gray-700">
           <p>
             I&rsquo;m Karen. A few years ago, I left the medical field and trained to

@@ -10,8 +10,8 @@ export default function Home() {
         aria-label="Welcome"
         className="bg-gradient-to-br from-brand-blue to-sky-300"
       >
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[3fr_2fr] md:py-20">
-          <div className="text-center md:text-left">
+        <div className="mx-auto grid max-w-6xl items-center gap-x-10 px-4 pt-16 md:grid-cols-[3fr_2fr] md:pt-20">
+          <div className="pb-16 text-center md:pb-20 md:text-left">
             <h1 className="text-5xl font-extrabold uppercase leading-tight tracking-tight text-brand md:text-6xl">
               Woof Wash
               <br />
@@ -29,7 +29,7 @@ export default function Home() {
           <img
             src={karenHoldingDog}
             alt="Karen, the groomer, holding a happy freshly groomed dog"
-            className="mx-auto w-full max-w-sm drop-shadow-2xl"
+            className="mx-auto w-full max-w-sm self-end drop-shadow-2xl"
           />
         </div>
       </section>
