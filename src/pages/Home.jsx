@@ -17,11 +17,10 @@ export default function Home() {
           className="w-full"
         />
         <div className="bg-brand-blue-light px-4 py-10 text-center">
-          <h1 className="text-3xl font-extrabold text-brand md:text-4xl">Welcome!</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-700">
+          <h1 className="mx-auto max-w-3xl text-2xl font-bold leading-snug text-brand md:text-3xl">
             Professional grooming in a stress-free environment for a calm, clean,
             good-looking dog!
-          </p>
+          </h1>
           <BookNowButton className="mt-6" />
         </div>
       </section>
